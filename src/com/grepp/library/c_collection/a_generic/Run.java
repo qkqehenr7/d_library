@@ -13,7 +13,7 @@ public class Run {
         Computer mac = new Computer("mac", "apple");
         Computer galaxyBook = new Computer("galaxyBook", "intel");
         SmartPhone iphone = new SmartPhone("iphone", "M4", "SKT");
-        SmartPhone galaxy = new SmartPhone("galaxy", "Snapdragon", "SKT")
+        SmartPhone galaxy = new SmartPhone("galaxy", "Snapdragon", "SKT");
         Book book = new Book("해리포터", "조앤롤링");
         Tv tv = new Tv("스탠바이미", 50);
 
