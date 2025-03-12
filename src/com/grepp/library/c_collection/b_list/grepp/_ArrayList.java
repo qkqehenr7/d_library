@@ -1,9 +1,10 @@
 package com.grepp.library.c_collection.b_list.grepp;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 @SuppressWarnings("unchecked")
-public class _ArrayList <E> implements Iterable <E> {
+public class _ArrayList<E> implements Iterable <E>, _List<E> {
 
 
     private Object[] elementData;
@@ -45,10 +46,24 @@ public class _ArrayList <E> implements Iterable <E> {
     public int size(){
         return pointer;
     }
-
     @Override
     public Iterator<E> iterator() {
-        return null;
+        return new Iterator<E>() {
+            private int pointer;
+
+            @Override
+            public boolean hasNext() {
+                return pointer < size();
+            }
+
+            @Override
+            public E next() { // Iterator 문서 참고
+                if (pointer >= size()) throw new NoSuchElementException();
+                E e = get(pointer);
+                pointer++;
+                return e;
+            }
+        };
     }
 
 }

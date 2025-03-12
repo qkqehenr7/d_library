@@ -1,11 +1,11 @@
 package com.grepp.library.c_collection.b_list;
 
 import com.grepp.library.c_collection.b_list.grepp._ArrayList;
+import com.grepp.library.c_collection.b_list.grepp._LinkedList;
 import com.grepp.library.c_collection.z_domain.School;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import org.w3c.dom.ls.LSOutput;
 
 public class Run {
 
@@ -24,14 +24,13 @@ public class Run {
     }
 
     private static void pracIterable() {
-        _ArrayList<Integer> list = new _ArrayList<>();
+        _LinkedList<Integer> list = new _LinkedList<>();
         for (int i = 0; i < 10; i++) {
             list.add(i);
         }
-        System.out.println(list);
 
-        for (Integer i : list){
-            System.out.println(i);
+        for (int i = 0; i < 10; i++) {
+            System.out.println(list.get(i));
         }
     }
 

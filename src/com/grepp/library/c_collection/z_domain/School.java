@@ -39,7 +39,7 @@ public class School implements Comparable<School> {
         // 2. 학교 레벨로 정렬하되, 만약 레벨이 같다면 학교명으로 내림차순 정렬
         int result = this.name.compareTo(o.name);
         if (result == 0) {
-            result = o.level.compareTo(this.level);
+            result = this.level.compareTo(o.level);
         }
         return result;
 
