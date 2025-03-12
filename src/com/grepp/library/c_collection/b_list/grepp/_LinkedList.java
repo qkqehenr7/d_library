@@ -1,8 +1,9 @@
 package com.grepp.library.c_collection.b_list.grepp;
 
 import com.grepp.library.c_collection.z_domain.Node;
+import java.util.Iterator;
 
-public class _LinkedList<E> implements _List<E> {
+public class _LinkedList<E> implements _List<E>, Iterable<E> {
 
     private Node<E> head;
     private int pointer;
@@ -43,5 +44,60 @@ public class _LinkedList<E> implements _List<E> {
         }
 
         return link.data(); // 해당 인덱스의 값을 return
+    }
+
+    public E set(int index, E e){
+        if (index < 0 || index >= pointer) throw new IndexOutOfBoundsException();
+
+        Node<E> link = head;
+
+        for (int i = 0; i < index; i++) {
+            link = link.next();
+        }
+
+        E modified = link.data(); // 이전 데이터값 추출
+        link.setData(e); //데이터 수정
+        return modified; // 이전 데이터값 출력
+    }
+
+    public E remove(int index){
+        if (index < 0 || index >= pointer) throw new IndexOutOfBoundsException();
+        // 삭제는 삭제할 노드의 앞 뒤 노드가 필요.
+        Node<E> link = head;
+        Node<E> prevNode = head;
+
+        if(index == 0){
+            head = head.next(); // 첫 노드를 삭제하는 경우 두 번째 노드를 head 에 이어주면 끝
+            pointer--;
+            return prevNode.data();
+        }
+
+        for (int i = 0; i < index; i++) {
+            prevNode = link; // 이전 노드 정보 저장
+            link = link.next();
+        }
+
+        prevNode.setNext(link.next());
+        pointer--;
+        return link.data();
+    }
+
+    @Override
+    public Iterator<E> iterator() {
+        // Iterable의 익명 클래스 생성
+        return new Iterator<E>() {
+            @Override
+            public boolean hasNext() {
+                return pointer < size();
+            }
+
+            @Override
+            public E next() {
+                if (pointer >= size()) throw new IndexOutOfBoundsException();
+                E e = get(pointer);
+                pointer++;
+                return e;
+            }
+        };
     }
 }

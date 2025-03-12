@@ -51,9 +51,16 @@ public class Run {
     }
 
     private static void pracRemove() {
-        List<Integer> list = new ArrayList<>();
+        _LinkedList<Integer> list = new _LinkedList<>();
         for (int i = 0; i < 10; i++) {
             list.add(i);
+        }
+
+        System.out.println(list);
+        list.remove(2);
+
+        for (int i = 0; i < 9; i++) {
+            System.out.println(list.get(i));
         }
 
         // 0, 1, 2, 3 번 인덱스 삭제
@@ -69,13 +76,13 @@ public class Run {
         School grepp = new School("그렙", "삼성", 10);
         School semyoung = new School("세명초", "속초", 1);
 
-        List<School> list = new ArrayList<>();
+        _LinkedList<School> list = new _LinkedList<>();
         list.add(seoul);
         list.add(yonsei);
-        System.out.println(list);
+        System.out.println(list.get(0));
 
         list.set(0, grepp);
-        System.out.println(list);
+        System.out.println(list.get(0));
 
     }
 
