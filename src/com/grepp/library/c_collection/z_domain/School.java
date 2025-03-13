@@ -45,4 +45,8 @@ public class School implements Comparable<School> {
 
 
     }
+
+    public String getName() {
+        return this.name;
+    }
 }

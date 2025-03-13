@@ -83,6 +83,18 @@ public class _LinkedList<E> implements _List<E>, Iterable<E> {
         return link.data();
     }
 
+    // todo contain 메서드 구현
+    public boolean contains(E e){
+        Node<E> link = head;
+        while(link != null){
+            if (link.data().equals(e)){ // 링크를 돌면서 중복이 있다면 return true
+                return true;
+            }
+            link = link.next();
+        }
+        return false;
+    }
+
     @Override
     public Iterator<E> iterator() {
         // Iterable의 익명 클래스 생성
