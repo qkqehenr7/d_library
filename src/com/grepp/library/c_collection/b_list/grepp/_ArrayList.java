@@ -48,15 +48,15 @@ public class _ArrayList<E> implements Iterable <E>, _List<E> {
         return (E) elementData[index];
     }
 
-    public E remove(int index){
-        if (index < 0 || index >= pointer) throw new IndexOutOfBoundsException();
-        arraySize -= 1
-        Object[] temp = new Object[arraySize];
-
-        for (int i = 0; i < ; i++) {
-            
-        }
-    }
+//    public E remove(int index){
+//        if (index < 0 || index >= pointer) throw new IndexOutOfBoundsException();
+//        arraySize -= 1
+//        Object[] temp = new Object[arraySize];
+//
+//        for (int i = 0; i < ; i++) {
+//
+//        }
+//    }
 
     public int size(){
         return pointer;

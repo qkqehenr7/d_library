@@ -2,6 +2,7 @@ package com.grepp.library.c_collection.b_list.grepp;
 
 import com.grepp.library.c_collection.z_domain.Node;
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 public class _LinkedList<E> implements _List<E>, Iterable<E> {
 
@@ -86,6 +87,8 @@ public class _LinkedList<E> implements _List<E>, Iterable<E> {
     public Iterator<E> iterator() {
         // Iterable의 익명 클래스 생성
         return new Iterator<E>() {
+
+            private int pointer;
             @Override
             public boolean hasNext() {
                 return pointer < size();
@@ -93,7 +96,7 @@ public class _LinkedList<E> implements _List<E>, Iterable<E> {
 
             @Override
             public E next() {
-                if (pointer >= size()) throw new IndexOutOfBoundsException();
+                if (pointer >= size()) throw new NoSuchElementException();
                 E e = get(pointer);
                 pointer++;
                 return e;
