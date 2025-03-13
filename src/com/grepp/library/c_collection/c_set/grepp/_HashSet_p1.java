@@ -35,7 +35,7 @@ public class _HashSet_p1<E> {
 
         int index = hash(e);
 
-        if (elementData[index] != null){
+        if (elementData[index] != null){ // 이미 Set 에 존재하는 값인 경우 add 불가능.
             return false;
         }
 
@@ -58,8 +58,8 @@ public class _HashSet_p1<E> {
 
     public boolean remove(E e){
         int index = hash(e);
-        if (elementData[index] == null) return false;
-        elementData[index] = null;
+        if (elementData[index] == null) return false; // 값이 존재하지 않으면 remove 불가
+        elementData[index] = null; // 존재하는 경우 삭제
         size--;
         return true;
     }

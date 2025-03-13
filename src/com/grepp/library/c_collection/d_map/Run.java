@@ -21,13 +21,13 @@ public class Run {
 
     private static void pracGet() {
         System.out.println("====get====");
-        _HashMap<String, School> map = createSchoolMap();
+        _HashMap<String, School> map = createSchools();
         System.out.println(map.get("서울대"));
 
-        for (Entry<String, School> entry : map.entrySet()){
-            System.out.println("key : " + entry.getKey());
-            System.out.println("value : " + entry.getValue());
-        }
+//        for (Entry<String, School> entry : map.entrySet()){
+//            System.out.println("key : " + entry.getKey());
+//            System.out.println("value : " + entry.getValue());
+//        }
 
         System.out.println("==========================");
 
@@ -42,7 +42,7 @@ public class Run {
 //        }
     }
 
-    private static _HashMap<String, School> createSchoolMap() {
+    private static _HashMap<String, School> createSchools() {
         _HashMap<String, School> map = new _HashMap<>();
         List<School> schools = SchoolFactory.createSchools();
         for (School school : schools){
@@ -55,14 +55,12 @@ public class Run {
         List<School> schools = SchoolFactory.createSchools();
         _HashMap<String, School> map = new _HashMap<>(); // Map은 제네릭 타입이 두 개.
 
-        System.out.println();
-
         map.put("서울대", schools.getFirst());
         map.put("연세대", schools.get(1));
         map.put("grepp", schools.get(2));
         map.put("grepp", new School("우리반", "집", 4));
 
-        System.out.println(map);
+        System.out.println(map.get("grepp"));
     }
 
 }

@@ -2,7 +2,7 @@ package com.grepp.library.c_collection.z_domain;
 
 import java.util.Objects;
 
-public class Node <E> {
+public class Node<E> {
 
     private Node<E> next;
     private E data;

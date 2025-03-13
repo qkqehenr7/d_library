@@ -9,7 +9,7 @@ public class _HashMap <K, V> {
     public V put(K key, V value){
         _Entry<K, V> entry = new _Entry<>(key, value);
         if (entrySet.add(entry)){
-            return value;
+            return value;               // 추가한 entry의 value return
         }
 
         return null;
@@ -17,8 +17,8 @@ public class _HashMap <K, V> {
 
     public V get(K key){
         _Entry<K, V> entry = entrySet.get(new _Entry<>(key, null));
-        if (entry == null) return null;
-        return entry.getValue();
+        if (entry == null) return null; // 존재하지 않는 Entry 라면 null
+        return entry.getValue(); // 존재하면 Value return
     }
 
     public V remove(K key){

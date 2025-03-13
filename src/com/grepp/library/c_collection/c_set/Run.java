@@ -1,6 +1,7 @@
 package com.grepp.library.c_collection.c_set;
 
 import com.grepp.library.c_collection.c_set.grepp._HashSet_p1;
+import com.grepp.library.c_collection.c_set.grepp._HashSet_p2;
 import com.grepp.library.c_collection.z_domain.School;
 import com.grepp.library.c_collection.z_domain.SchoolFactory;
 import java.util.HashSet;
@@ -11,8 +12,8 @@ public class Run {
 
     public static void main(String[] args) {
 
-        //pracAdd();
-        pracRemove();
+        pracAdd();
+        //pracRemove();
         List<String> firstList = List.of(
             "권명천",
             "김민성",
@@ -72,12 +73,12 @@ public class Run {
 
     private static void pracAdd() {
 
-        _HashSet_p1<School> set = new _HashSet_p1<>();
+        _HashSet_p2<School> set = new _HashSet_p2<>();
         List<School> list = SchoolFactory.createSchools();
 
         for (School school : list){
             System.out.println(school);
-            System.out.println(set.add(school));
+            set.add(school);
         }
 
         System.out.println(set);
