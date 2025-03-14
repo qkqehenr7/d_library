@@ -46,7 +46,7 @@ public class Run {
 
         Collections.sort(nums);
         System.out.println(nums);
-        Collections.sort(schools);
+        Collections.sort(schools, (a, b) -> a.getName().compareTo(b.getName()));
         System.out.println(schools);
     }
 
